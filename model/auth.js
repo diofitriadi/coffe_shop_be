@@ -6,14 +6,14 @@ module.exports = {
     login: (req, res)=> {
         const {email, password} = req.body
         return new Promise((resolve, reject)=> {
-            db.query(`SELECT id, password FROM users WHERE email='${email.toLowerCase()}'`
+            db.query(`SELECT id, password, role FROM users WHERE email='${email.toLowerCase()}'`
             ,(err, results)=> {
-                if(err) {reject({message: 'Email atau Password salah'}) //bcrypt nya error
+                if(err) {reject({message: 'Wrong Email or Password'}) //bcrypt nya error
                 } else {
                     bcrypt.compare(password, results[0].password, function(errHash, succHash) {                  
-                        if(errHash) {reject({message: 'Ada Masalah Saat Login, Silahkan Coba Lagi'})}
+                        if(errHash) {reject({message: 'Problem while sign in, please try again'})}
                         if(succHash) {
-                            const token = jwt.sign({ user_id: results[0].id }, process.env.JWT_SECRET_KEY, {
+                            const token = jwt.sign({ id: results[0].id, role: results[0].role }, process.env.JWT_SECRET_KEY, {
                                 expiresIn: '1day'
                             })
                             resolve({

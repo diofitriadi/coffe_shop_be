@@ -22,14 +22,14 @@ const fileExtension = (req, file, value) => { // file validation
     const maxSize = { // limit size image
     fileSize: 1 * 2000 * 2000 //2000000 bytes = 2mb
     }
-    const uploadMovies = multer({
+    const uploadProducts = multer({
     storage: storage,
     fileFilter: fileExtension,
     limits: maxSize
-    }).single('cover')
+    }).single('products_image')
 
 const upload = (req, res, next) => {
-    uploadMovies(req, res, (err) => {
+    uploadProducts(req, res, (err) => {
         if(err instanceof multer.MulterError){
             return res.json({
             success: false,
