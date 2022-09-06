@@ -5,7 +5,7 @@ const port = 3001
 const bodyParser = require('body-parser')
 const router = require('./routes')
 const cors = require('cors')
-const path = require('path')
+const path = require('path') 
 const paginate = require('express-paginate')
 
 app.use(cors())

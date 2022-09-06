@@ -21,7 +21,7 @@ module.exports = {
                                 status: 200,
                                 user_id: results[0].id,
                                 token
-                                })
+                            })
                         } else {reject({message: 'Email atau Password salah'})}    
                     })
                 }

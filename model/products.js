@@ -20,6 +20,27 @@ module.exports = {
       })
     })
   },
+  getById: () => {
+    const {products_id} = req.params
+    return new Promise((resolve, reject) => {
+      db.query(`SELECT * FROM products WHERE products_id=${products_id}`, (err, result) => {
+        if (err) {
+          console.log(err)
+          reject({
+            success: false,
+            status: 500,
+            message: `Error!, ${err.code}`,
+          })
+        }
+        resolve({
+          status: 200,
+          message: 'Get By Id Success',
+          data: result
+        })
+      })
+    })
+  }
+  ,
   add: (req, res)=> {
     return new Promise((resolve, reject)=> {
       const { products_name, products_image, products_price, products_desc } = req.body
