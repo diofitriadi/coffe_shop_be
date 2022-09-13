@@ -10,14 +10,14 @@ const paginate = require('express-paginate')
 
 
 //client
-const corsOptions ={
-    origin: 'https://coffee-shop-be-dio.herokuapp.com/',
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
+// const corsOptions ={
+//     origin: 'https://coffee-shop-be-dio.herokuapp.com/',
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
 
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 //cara pertama kita input kita ada di json (di postman: body > Raw > Type = JSON)
 app.use(bodyParser.json())
