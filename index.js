@@ -1,14 +1,21 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = 3001
+const port = process.env.PORT || 3001
 const bodyParser = require('body-parser')
 const router = require('./routes')
 const cors = require('cors')
 const path = require('path') 
 const paginate = require('express-paginate')
 
-app.use(cors())
+
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions))
+
 //cara pertama kita input kita ada di json (di postman: body > Raw > Type = JSON)
 app.use(bodyParser.json())
 //www-url-form-encoded

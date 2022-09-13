@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express()
-const productsRoutes = require('./productsRoutes')
 const authRoutes = require('./authRoutes')
+const productRoutes = require('./productRoutes')
 
 
-app.use('/products', productsRoutes)
+
+app.use('/product', productRoutes)
 app.use('/auth', authRoutes)
 
 

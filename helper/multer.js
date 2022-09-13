@@ -26,7 +26,7 @@ const fileExtension = (req, file, value) => { // file validation
     storage: storage,
     fileFilter: fileExtension,
     limits: maxSize
-    }).single('products_image')
+    }).single('product_image')
 
 const upload = (req, res, next) => {
     uploadProducts(req, res, (err) => {

@@ -20,7 +20,8 @@ module.exports = {
                                 message: 'login success',
                                 status: 200,
                                 user_id: results[0].id,
-                                token
+                                token,
+                                role: results[0].role
                             })
                         } else {reject({message: 'Email atau Password salah'})}    
                     })
