@@ -13,7 +13,7 @@ const paginate = require('express-paginate')
 const corsOptions ={
     origin:[
         'http://localhost:3000',
-        'https://coffee-shop-admin.vercel.app/'
+        'https://coffee-shop-be-dio.herokuapp.com/'
     ],
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
