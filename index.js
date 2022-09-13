@@ -9,11 +9,17 @@ const path = require('path')
 const paginate = require('express-paginate')
 
 
+//client
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:[
+        'http://localhost:3000',
+        'https://coffee-shop-admin.vercel.app/'
+    ],
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
+
+
 app.use(cors(corsOptions))
 app.use(cors())
 
