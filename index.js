@@ -11,10 +11,7 @@ const paginate = require('express-paginate')
 
 //client
 const corsOptions ={
-    origin:[
-        'http://localhost:3000',
-        'https://coffee-shop-be-dio.herokuapp.com/'
-    ],
+    origin: 'https://coffee-shop-be-dio.herokuapp.com/',
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
