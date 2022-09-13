@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3006
 const bodyParser = require('body-parser')
 const router = require('./routes')
 const cors = require('cors')
@@ -15,6 +15,7 @@ const corsOptions ={
     optionSuccessStatus:200
 }
 app.use(cors(corsOptions))
+app.use(cors())
 
 //cara pertama kita input kita ada di json (di postman: body > Raw > Type = JSON)
 app.use(bodyParser.json())

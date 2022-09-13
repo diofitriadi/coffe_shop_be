@@ -33,23 +33,12 @@ module.exports = {
             status: 500,
             message: `Error!, ${err.code}`,
           })
-        } else {
-          let totalPage = Math.ceil(result.length/limit)
-          if(page > totalPage) {
-            reject({
-              message: "Page not found!",
-              status: 404,
-              data: []
-          })
-          }
-          resolve({
-            message: "Get all from product success",
-            status: 200,
-            totalRow: results.length,
-            totalPage: totalPage,
-            data: results
-          });
-        }
+        } 
+        resolve({
+          message: "Get all from product success",
+          status: 200,
+          data: results
+        });
       })
     })
   }
