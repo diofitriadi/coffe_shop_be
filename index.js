@@ -18,7 +18,6 @@ const corsOptions ={
 
 
 app.use(cors(corsOptions))
-app.use(cors())
 
 //cara pertama kita input kita ada di json (di postman: body > Raw > Type = JSON)
 app.use(bodyParser.json())
